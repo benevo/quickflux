@@ -72,13 +72,3 @@ void QuickFluxPlugin::registerTypes(const char *uri)
     qmlRegisterType<QFActionCreator>(uri, verMajor, verMinor, "ActionCreator");
 }
 
-QString QuickFluxPlugin::objectName1() const
-{
-    return objectName1;
-}
-
-void QuickFluxPlugin::setObjectName1(const QString &name)
-{
-    objectName1 = name;
-}
-

@@ -37,16 +37,11 @@ class Q_DECL_EXPORT QuickFluxPlugin : public QQmlExtensionPlugin
 #if !defined(STATIC_PLUGIN_QUICKFLUX)
     Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
 #endif
-    Q_PROPERTY(QString objectName1 READ objectName1 WRITE setObjectName1 NOTIFY objectName1Changed)
 
 public:
     explicit QuickFluxPlugin(QObject *parent = 0);
 
     void registerTypes(const char *uri);
-
-    QString objectName1() const;
-    void setObjectName1(const QString &name);
-
 };
 
 #endif // QUICKFLUX_PLUGIN_H
