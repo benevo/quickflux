@@ -19,5 +19,17 @@ Window {
     ImagePickerScript {
     }
 
+    Component.onCompleted: {
+        var errorTypes = {
+            0: "Unknown error",
+            1: "Permission denied by user",
+            2: "Position is not available",
+            3: "Request timed out"
+        };
+
+        var errorMsg = errorTypes[2]
+        console.log(errorMsg)
+    }
+
 }
 

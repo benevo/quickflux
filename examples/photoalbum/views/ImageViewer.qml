@@ -3,6 +3,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls 1.3
 import "../stores"
 import "../actions"
+import "../scripts"
 
 Rectangle {
     id: viewer
@@ -25,6 +26,13 @@ Rectangle {
                       source: model.url
                       asynchronous: true
                       fillMode: Image.PreserveAspectCrop
+
+                      MouseArea {
+                          anchors.fill: parent
+                          onClicked: {
+                              AppActions.previewPhoto(source)
+                          }
+                      }
                   }
              }
         }

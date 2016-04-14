@@ -48,7 +48,6 @@ Item {
             // Register a set of callbacks as workflow
             // Registered callbacks will be executed once only per script execution
             once(dialog.onAccepted, function() {
-
                 // Step 2. Once user picked an image, launch preview window and ask for confirmation.
                 AppActions.navigateTo(imagePreview,
                                       {source: dialog.fileUrl});
@@ -75,5 +74,22 @@ Item {
         }
     }
 
+    AppScript {
+        // Run this script if "previewPhoto" signal is triggered.
+        runWhen: ActionTypes.previewPhoto
+
+        script: {
+            AppActions.navigateTo(imagePreview,
+                                  {source: message.url});
+
+            once(ActionTypes.pickPhoto, function(message) {
+//                PhotoStore.add(String(message.url));
+                AppActions.navigateBack();
+
+            });
+
+            once(ActionTypes.navigateBack,exit.bind(this,0));
+        }
+    }
 }
 

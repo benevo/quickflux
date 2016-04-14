@@ -23,6 +23,8 @@ ActionCreator {
 
     /* Create action by traditional method */
 
+//    signal previewPhoto(string url)
+
     function previewPhoto(url) {
         AppDispatcher.dispatch(ActionTypes.previewPhoto,{url: url});
     }
