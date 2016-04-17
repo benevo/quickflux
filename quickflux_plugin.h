@@ -35,7 +35,7 @@ class Q_DECL_EXPORT QuickFluxPlugin : public QQmlExtensionPlugin
 {
     Q_OBJECT
 #if !defined(STATIC_PLUGIN_QUICKFLUX)
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QQmlExtensionInterface")
+    Q_PLUGIN_METADATA(IID "io.benevo.QuickFlux")
 #endif
 
 public:
